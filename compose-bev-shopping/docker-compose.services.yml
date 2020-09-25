@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  catalog_service:
+    build:
+      context: ../
+      dockerfile: src/CatalogService/BevShopping.Catalog.Api/Dockerfile
+    container_name: catalog_service
+    restart: unless-stopped
+    networks:
+      - network-microservice
+    links:
+      - db-catalog
+      - consul
+    depends_on:
+      - db-catalog
+      - consul

@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\shared\BevShopping.Shared.Core\BevShopping.Shared.Core.csproj" />
+    <ProjectReference Include="..\..\..\shared\BevShopping.Shared.Infra\BevShopping.Shared.Infra.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+</Project>

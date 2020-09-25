@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  db-catalog:
+    image: mongo
+    container_name: db-catalog
+    restart: on-failure
+    ports:
+      - "27017:27017"
+    networks:
+      - network-microservice

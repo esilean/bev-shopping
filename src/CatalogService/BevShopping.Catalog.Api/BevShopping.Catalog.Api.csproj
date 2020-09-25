@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BevShopping.Catalog.Application\BevShopping.Catalog.Application.csproj" />
+    <ProjectReference Include="..\BevShopping.Catalog.Data\BevShopping.Catalog.Data.csproj" />
+    <ProjectReference Include="..\BevShopping.Catalog.Domain\BevShopping.Catalog.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,19 @@
+version: "3.5"
+
+networks:
+  # Network for microservices
+  network-microservice:
+    #internal: true
+    driver: bridge
+    ipam:
+      driver: default
+
+services:
+  consul:
+    image: consul
+    container_name: consul
+    restart: on-failure
+    ports:
+      - "8500:8500"
+    networks:
+      - network-microservice
