@@ -5,8 +5,9 @@ services:
     build:
       context: ../
       dockerfile: src/CatalogService/BevShopping.Catalog.Api/Dockerfile
-    container_name: catalog_service
     restart: unless-stopped
+    ports:
+      - "5010-5011:5010"
     networks:
       - network-microservice
     links:

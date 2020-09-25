@@ -4,6 +4,7 @@ using BevShopping.Catalog.Data.Repositories;
 using BevShopping.Catalog.Domain.Repositories;
 using BevShopping.Shared.Core;
 using BevShopping.Shared.Infra.Consul;
+using BevShopping.Shared.Infra.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,7 @@ namespace BevShopping.Catalog.Api
         {
             services
             .AddConsul(Configuration)
+            .AddSwagger(Configuration)
             .AddCore(typeof(Create));
 
             services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
@@ -39,10 +41,9 @@ namespace BevShopping.Catalog.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app
                 .UseConsul(lifetime)
+                .UseSwagger(Configuration)
                 .UseCore();
         }
     }

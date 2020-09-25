@@ -1,0 +1,28 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/catalogs",
+            "DownstreamScheme": "http",
+            "UpstreamPathTemplate": "/api/catalogs",
+            "ServiceName": "CatalogService",
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "LeastConnection"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/catalogs/{everything}",
+            "DownstreamScheme": "http",
+            "UpstreamPathTemplate": "/api/catalogs/{everything}",
+            "ServiceName": "CatalogService",
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "LeastConnection"
+            }
+        }
+    ]
+}

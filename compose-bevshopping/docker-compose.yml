@@ -1,6 +1,11 @@
 version: "3.5"
 
 networks:
+  # Network for api gateway
+  network-gateway:
+    driver: bridge
+    ipam:
+      driver: default
   # Network for microservices
   network-microservice:
     #internal: true

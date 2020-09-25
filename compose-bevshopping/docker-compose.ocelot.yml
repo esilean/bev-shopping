@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  api:
+    build: ../ocelot/ApiGateway
+    container_name: api
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    networks:
+      - network-gateway
+      - network-microservice
+    links:
+      - catalog_service
+    depends_on:
+      - consul

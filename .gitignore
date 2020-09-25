@@ -1,11 +1,11 @@
 # Application
 *.db
+ocelot.json
 publish
 PublishProfiles
 ServiceDependencies
 serviceDependencies.*
 TestResults/
-x.txt
 
 # misc
 .DS_Store
@@ -14,6 +14,7 @@ x.txt
 
 # User-specific files
 *.suo
+x.txt
 
 # Build results
 [Dd]ebug/
