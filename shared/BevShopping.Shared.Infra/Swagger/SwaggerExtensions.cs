@@ -38,11 +38,9 @@ namespace BevShopping.Shared.Infra.Swagger
             }
 
             app.UseSwagger();
-
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint($"/swagger/{options.VersionName}/swagger.json", options.Title);
-                c.RoutePrefix = options.RoutePrefix;
             });
 
             return app;

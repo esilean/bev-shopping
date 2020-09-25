@@ -48,11 +48,19 @@ namespace ApiGateway
                 .AddOcelot(Configuration)
                 .AddConsul()
                 .AddConfigStoredInConsul();
+
+            services.AddSwaggerForOcelot(Configuration);
         }
 
         public void Configure(IApplicationBuilder app)
         {
             app.UseStaticFiles();
+
+            app.UseSwaggerForOcelotUI(opt =>
+            {
+                opt.PathToSwaggerGenerator = "/swagger/docs";
+            });
+
             app.UseOcelot().Wait();
         }
     }

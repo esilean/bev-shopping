@@ -1,1 +1,2 @@
+docker-compose -f docker-compose.yml -f docker-compose.dbs.yml -f docker-compose.services.yml -f docker-compose.ocelot.yml up --build
 docker-compose -f docker-compose.yml -f docker-compose.dbs.yml -f docker-compose.services.yml -f docker-compose.ocelot.yml up --scale catalog_service=2 --build

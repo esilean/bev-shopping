@@ -1,28 +1,42 @@
 {
-    "Routes": [
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/catalogs",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/catalogs",
+      "ServiceName": "CatalogService",
+      "FileCacheOptions": {
+        "TtlSeconds": 15
+      },
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "SwaggerKey": "CatalogService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/catalogs/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/catalogs/{everything}",
+      "ServiceName": "CatalogService",
+      "FileCacheOptions": {
+        "TtlSeconds": 15
+      },
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "SwaggerKey": "CatalogService"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "CatalogService",
+      "Config": [
         {
-            "DownstreamPathTemplate": "/api/catalogs",
-            "DownstreamScheme": "http",
-            "UpstreamPathTemplate": "/api/catalogs",
-            "ServiceName": "CatalogService",
-            "FileCacheOptions": {
-                "TtlSeconds": 15
-            },
-            "LoadBalancerOptions": {
-                "Type": "LeastConnection"
-            }
-        },
-        {
-            "DownstreamPathTemplate": "/api/catalogs/{everything}",
-            "DownstreamScheme": "http",
-            "UpstreamPathTemplate": "/api/catalogs/{everything}",
-            "ServiceName": "CatalogService",
-            "FileCacheOptions": {
-                "TtlSeconds": 15
-            },
-            "LoadBalancerOptions": {
-                "Type": "LeastConnection"
-            }
+          "Name": "Catalog API",
+          "Version": "v1",
+          "Url": "http://catalog_service/swagger/v1/swagger.json"
         }
-    ]
+      ]
+    }
+  ]
 }
