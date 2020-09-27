@@ -2,6 +2,7 @@ using BevShopping.Catalog.Application.Catalogs;
 using BevShopping.Catalog.Data.Data;
 using BevShopping.Catalog.Data.Repositories;
 using BevShopping.Catalog.Domain.Repositories;
+using BevShopping.Shared.Brokers.Kafka;
 using BevShopping.Shared.Core;
 using BevShopping.Shared.Infra.Consul;
 using BevShopping.Shared.Infra.Swagger;
@@ -27,6 +28,7 @@ namespace BevShopping.Catalog.Api
             services
             .AddConsul(Configuration)
             .AddSwagger(Configuration)
+            .AddKafka(Configuration)
             .AddCore(typeof(Create));
 
             services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
@@ -40,6 +42,9 @@ namespace BevShopping.Catalog.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //TODO
+            //app.UseKafkaSubscribe<Event>();
 
             app
                 .UseConsul(lifetime)

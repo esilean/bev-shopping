@@ -13,6 +13,7 @@
     <ProjectReference Include="..\BevShopping.Catalog.Application\BevShopping.Catalog.Application.csproj" />
     <ProjectReference Include="..\BevShopping.Catalog.Data\BevShopping.Catalog.Data.csproj" />
     <ProjectReference Include="..\BevShopping.Catalog.Domain\BevShopping.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\..\..\shared\BevShopping.Shared.Brokers\BevShopping.Shared.Brokers.csproj" />
   </ItemGroup>
 
 
